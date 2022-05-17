@@ -1,0 +1,152 @@
+<xml version="2.0" encoding="UTF-8">
+
+
+<mets:mets OBJID="ProjectArchivalDataBase***.***.***"  PROFILE=
+"http://www.loc.gov/mets/profiles/00000007.xml" xsi:schemaLocation=
+"http://www.loc.gov/METS_Profile/
+http://www.loc.gov/standards/mets/profile_docs/mets.profile.v1-2.xsd
+http://www.loc.gov/METS/ http://www.loc.gov/standards/mets/mets.xsd
+http://www.loc.gov/mods/v3 http://www.loc.gov/standards/mods/v3/
+mods-3-0.xsd"> <!-- Используем префикс (стандартный для нашей базы) BigProjectArchivalDataBase, дополняем его числовыми значениями полей фонд, опись, дело -->
+  
+  <metsHdr CREATEDATE="2022-05-03T15:00:00" RECORDSTATUS="Complete">
+    <agent ROLE="CREATOR" TYPE="ORGANIZATION"> 
+       <name>HSE</name>
+    </agent>
+    <agent ROLE="ARCHIVIST" TYPE="INDIVIDUAL">
+      <name> имя архивиста </name> <!--Вставить из ячейки имя архивиста-->
+    </agent>
+  </metsHdr>
+  
+    <dmdSec ID="dmd002">  <!-- ID указателя на метаданные -->
+    <mdWrap MIMETYPE="application/xml" MDTYPE="EAD" LABEL="Указатель цифрового архива проекта «Социальная антропология институтов позднего СССР"> 
+      <xmlData>
+        <ead>
+         <archdsc level="file">
+     <did>
+       <unittitle>Название дела</unittitle> <!--Вставить из ячейки название дела-->
+       <unitid>File***.***.***</unitid> <!--Числовой id дела в виде File***, где *** - числовые значения фонда, описи, дела -->
+       <daoset coverage="whole"> <!--Прикрепленные файлы, каждый внутренний тег dao соответствует одному файлу-->
+         <dao daotype="borndigital" id=""/> <!--id - название файла, всегда borndigital-->
+       </daoset>
+       
+       <didnote> <!--Нужен, если есть url-ссылка-->
+         <ref href=""> <!--Непосредственно сама ссылка, используем два раза: как атрибут href и в теле тега-->
+           //ссылка
+         </ref>
+       </didnote>
+     </did>
+     
+     <scopecontent> <!--Вставить из ячейки описание дела-->
+       Возможно, ,более подробное содержание поля "описание дела"
+     </scopecontent>
+     <dsc> <!--Прикрепленные документы, для каждого отдельный тег <c>, последовательность тэгов <c> должна соответствовать порядковым номерам документов в деле-->
+       <c level="item"> <!--Содержит сокращенную версию ead-файла документа-->
+         <did>
+          <daoset> <!--для каждого файла создается отдельный dao-->
+           <dao daotype="borndigital" coverage="part" show="new" linktitle="Annual Report: 1999" 
+            href="https://"/> <!--coverage="whole", если к документу приложен единственный файл, "part" иначе; linktitle - название файла, href - ссылка на файл-->
+         </daoset>
+          <didnote localtype="number">###</didnote> <!--номер документа в деле-->
+          <origination localtype="orginalcreator">кто создал</origination> <!--значение внутри тега подставляется из переменных-->
+          <origination localtype="hseres">создание цифрового образа</origination> <!--значение внутри тега подставляется из переменных-->
+          <physloc>местонахождение оригинального документа</physloc> <!--значение внутри тега подставляется из переменных-->
+          <repository>
+            <corpname>право доступа к документу</corpname> <!--значение внутри тега подставляется из переменных-->
+          </repository>
+          <unittitle>название документа</unittitle> <!--значение внутри тега подставляется из переменных-->
+          <unitdate normal="YYYY-MM-DD, YYYYMMDD, YYYY/YYYY" label="creationdate">11/22/1982</unitdate> <!--значение внутри тега подставляется из переменных-->
+          <unitdate normal="YYYY-MM-DD, YYYYMMDD, YYYY/YYYY" label="digitalcopycreationdate">11/22/2022</unitdate> <!--значение внутри тега подставляется из переменных-->
+          <unitid>doc###</unitid> <!--числовое значение id документа вместо трех хэшей(подставляется из переменных)-->
+        </did>
+        <accessrestrict audience="external"> 
+          <head>статус публикации</head>
+          <p>документ опубликован ДАТА_ПУБЛИКАЦИИ по ссылке: ССЫЛКА НА ПУБЛИКАЦИЮ</p> <!--значение внутри тега подставляется из переменных-->
+        </accessrestrict>
+       </c>
+     </dsc>
+    </archdsc>
+          
+          
+          </ead>
+      </xmlData>
+    </mdWrap>
+  </dmdSec>
+  
+   <amdSec>
+      <techMD >  
+        <mdWrap MIMETYPE="application/xml" MDTYPE="OTHER" >
+   <xmlData>
+     <MIMEtype>application/vnd.openxmlformats-officedocument.wordprocessingml.document</MIMEtype> <!-- в том случае если есть расшифровка или другие файлы docx-->
+          <niso:MIMEtype>image/jpeg</niso:MIMEtype> <!-- в том случае если есть подпись или другие файлы в формате jpeg-->
+          <MIMEtype>audio/mpeg</MIMEtype> <!-- в том случае если есть аудио-интервью или другие файлы аудио-->
+   </xmlData>
+ </mdWrap>
+       </techMD> <!-- mdWrap и mdRef-->
+ 
+       <rightsMD><!-- ID  указателя на правовые метаданные-->
+         </rightMD> <!-- mdWrap и mdRef-->
+  
+  
+      <sourceMD> <!-- ID  указателя на метаданные источника --> 
+      <sourceMD>
+      
+      
+      <digiprovMD> <!-- ID  указателя на метаданные происхождения цифрового объекта--> 
+      <digiprovMD> 
+     </amdSec>
+      
+      
+	<fileSec>
+      <fileGrp ID="audio">
+        <file ID="File***.***.***"  MIMETYPE="audio/mpeg" SIZE="" CREATED=""> <!--Числовой id дела в виде File***, где *** - числовые значения фонда, описи, дела -->
+          <FLocat LOCTYPE="URN"> <!-- указатель на файл-->
+          </FLocat>
+        </file>
+      </fileGrp>
+      <fileGrp ID="text">
+          <file ID="File***.***.***" MIMETYPE="text/plain" SIZE="" CREATED="" >
+            <FLocat LOCTYPE="URN">
+            </FLocat>
+          </file>  
+      </fileGrp>
+        <fileGrp ID="image">
+          <file ID="File***.***.***" MIMETYPE="image/jpeg" SIZE="" CREATED="" >
+            <FLocat LOCTYPE="URN">
+            </FLocat>
+          </file>  
+      </fileGrp>
+  </fileSec>
+
+        
+       <structMap TYPE="logical">
+      <div ID="div1" LABEL="" TYPE=""> <!-- корень-->
+            <div ID="" LABEL="" ORDER="1"> <!--ребенок-->
+                  <fptr FILEID=""> <!-- файл -->
+                    <area FILEID="" BEGIN="" END="" BETYPE=""/>
+                </fptr>
+                <fptr FILEID="FILE002">
+                    <area FILEID="FILE002" BEGIN="00:00:00"                         END="00:01:47" BETYPE="TIME"/>
+                </fptr> <!--пример-->
+            </div>
+        </div>
+  </structMap>
+  
+          
+  <structMap TYPE="logical">
+      <div ID="div1" LABEL="" TYPE=""> <!-- корень-->
+            <div ID="" LABEL="" ORDER="1"> <!--ребенок-->
+                  <fptr FILEID=""> <!-- файл -->
+                    <area FILEID="" BEGIN="" END="" BETYPE=""/>
+                </fptr>
+                <fptr FILEID="FILE002">
+                    <area FILEID="FILE002" BEGIN="00:00:00"  END="00:01:47" BETYPE="TIME"/>
+                </fptr> <!--пример-->
+            </div>
+        </div>
+  </structMap>
+  
+          
+    <smLink from="" to="" xlink:title="" xlink:show="" xlink:actuate=""/> <!-- связьмежду не потомками -->
+          
+</mets>
